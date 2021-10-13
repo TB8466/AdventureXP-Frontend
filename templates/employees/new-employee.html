@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <form action="/employee/save" th:object="${employee}" method="post">
-        <input type="text" placeholder="First name" th:field="${employee.firstName}">
-        <input type="text" placeholder="Last name" th:field="${employee.lastName}">
+        <input type="text" class="firstNameClass" placeholder="First name">
+        <input type="text" class="lastNameClass"  placeholder="Last name">
 
-        <button type="submit">Create employee</button>
+        <button class="CreateEmpBtn">Create employee</button>
 
-    </form>
+<script src="/static/js/newEmployee.js"></script>
 </body>
 </html>

@@ -1,3 +1,7 @@
+const out = function (str) {console.log(str)};
+
+
+
 console.log("hello")
 
 
