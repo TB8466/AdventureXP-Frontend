@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Activity</title>
+</head>
+<body>
+
+
+<form action="/activity/save" th:object="${activity}" method="post">
+    <input type="text" placeholder="Activity Name" th:field="${activity.activityName}">
+    <input type="number" placeholder="Activity Age" th:field="${activity.ageReq}">
+    <input type="number" placeholder="Activity Height" th:field="${activity.heightReq}">
+    <input type="text" placeholder="Activity Equipment" th:field="${activity.equipment}">
+    <input type="number" placeholder="Activity Time" th:field="${activity.time}">
+
+    <button type="submit">Create Activity</button>
+
+
+
+</form>
+
+
+</body>
+</html>
