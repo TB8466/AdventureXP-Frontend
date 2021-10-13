@@ -1,3 +1,4 @@
+console.log("hello")
 
 
 
@@ -17,24 +18,23 @@ const saveActivityURL = "http://localhost:8080/save";
 let postRequestActivity= {
   method: "POST",
   headers: {
-    "content": "application/json"
+    "content-type": "application/json"
   },
   body: ""
 }
 
 let activityJson = {
-
-"activity": ""
+"activityName": ""
 }
 
 function createActivity(btn){
 
   let inpValue = document.querySelector('.inpclass')
 
-  activityJson.activity = inpValue.value;
+  activityJson.activityName = inpValue.value;
 
   postRequestActivity.body = JSON.stringify(activityJson)
-  fetch(saveActivityURL, postRequestActivity).catch((lambdaerrornamesux) => console.log(lambdaerrornamesux));
+  fetch(saveActivityURL, postRequestActivity).catch((error) => console.log(error));
 }
 
 
