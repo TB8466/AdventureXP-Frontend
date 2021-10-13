@@ -17,7 +17,7 @@ function fetchActivity(){
 // let activityBody;
 
 
-const saveActivityURL = "http://localhost:8080/save";
+const saveActivityURL = "http://localhost:8080/activity/save";
 
 let postRequestActivity= {
   method: "POST",
@@ -28,7 +28,8 @@ let postRequestActivity= {
 }
 
 let activityJson = {
-"activityName": ""
+  "activityId": "",
+  "activityName": ""
 }
 
 function createActivity(btn){
@@ -40,6 +41,7 @@ function createActivity(btn){
   postRequestActivity.body = JSON.stringify(activityJson)
   fetch(saveActivityURL, postRequestActivity).catch((error) => console.log(error));
 }
+
 
 
 document.querySelector('.pb').addEventListener('click', createActivity);
