@@ -6,15 +6,6 @@ console.log("hello")
 
 
 
-/*
-function fetchActivity(){
-
-  return fetch(activityAPI).then(lateResponse => lateResponse.json());
-}
-*/
-
-
-// let activityBody;
 
 
 const saveActivityURL = "http://localhost:8080/activity/save";

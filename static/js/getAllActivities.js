@@ -15,7 +15,8 @@ function callGetAllActivities(btn){
 function printActivities(activitydata){
 
   activitydata.forEach(activity => {
-    const createName = document.createElement('h1');
+    const createName = document.createElement('a');
+    createName.href = "www.google.com"
     const createAge = document.createElement('h1');
     const createHeight = document.createElement('h1');
     const createEquipment = document.createElement('h1');
@@ -36,3 +37,36 @@ function printActivities(activitydata){
 let childAppender = document.querySelector('.appending')
 
 callGetAllActivities();
+
+
+
+function updateActivity(){
+
+  const URL = "http://localhost:8080/activity/update/" + 1;
+
+  let activityJson = {
+    "activityId": "",
+    "activityName": "Hestecurling",
+    "ageReq": "22",
+    "heightReq": "22",
+    "equipment": "nonemoooss",
+    "time": "25"
+  }
+
+  let postRequestActivity= {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json"
+    },
+    body: JSON.stringify(activityJson)
+  }
+
+
+
+  const response = fetch(URL, postRequestActivity)
+  out(response)
+
+
+}
+
+document.querySelector('.pb').addEventListener('click', updateActivity);
