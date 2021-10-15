@@ -1,3 +1,19 @@
+td {
+  text-align: center;
+}
+.BookStyle{
+
+  Background: #ff7679
+}
+.InstrucStyle{
+  Background: #8cd2ff
+}
+
+.ActivStyle{
+
+  Background: #fffea3
+}
+
 body{
     background-color: blue;
 }
