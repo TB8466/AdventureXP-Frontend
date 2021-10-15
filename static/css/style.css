@@ -15,5 +15,18 @@ td {
 }
 
 body{
-    background-color: blue;
+    background-color: green;
+}
+
+header{
+  border-bottom: 5px solid black;
+}
+
+.inputWrapper{
+  display: flex;
+  width: fit-content;
+  border: 5px solid black;
+
+  margin: auto;
+  margin-top: 15px;
 }
