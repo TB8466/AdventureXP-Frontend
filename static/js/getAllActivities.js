@@ -1,5 +1,8 @@
+
+
 function printActivities(){
   let childAppender = document.querySelector('.appending')
+
 for(let key of activityMap.keys()) {
   let activityKey = activityMap.get(key)
   const createName = document.createElement('h1');
@@ -8,24 +11,23 @@ for(let key of activityMap.keys()) {
   const createEquipment = document.createElement('h2');
   const createTime = document.createElement('h2');
   const createEditButton = document.createElement('button')
+  const createATag = document.createElement('a')
   createName.innerHTML = activityKey.activityName;
   createAge.innerHTML = activityKey.ageReq;
   createHeight.innerHTML = activityKey.heightReq;
   createEquipment.innerHTML = activityKey.equipment;
   createTime.innerHTML = activityKey.time;
   createEditButton.innerHTML = "edit";
+  createATag.href = "../activity/updateActivity.html"
   childAppender.appendChild(createName)
   childAppender.appendChild(createAge)
   childAppender.appendChild(createHeight)
   childAppender.appendChild(createEquipment)
   childAppender.appendChild(createTime)
-  childAppender.appendChild(createEditButton);
+  createATag.appendChild(createEditButton)
+  childAppender.appendChild(createATag);
 }
-
 }
-
-
-
 
 
 
