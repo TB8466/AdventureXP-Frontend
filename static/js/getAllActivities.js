@@ -9,34 +9,51 @@ function getAllActivities(){
 
 function callGetAllActivities(btn){
   const prom = getAllActivities();
-  prom.then(printActivities);
+  prom.then(createActivityMap).then(printActivities);
 }
 
-function printActivities(activitydata){
+function printActivities(){
+  let childAppender = document.querySelector('.appending')
+for(let key of activityMap.keys()) {
+  let activityKey = activityMap.get(key)
+  const createName = document.createElement('h1');
+  const createAge = document.createElement('h2');
+  const createHeight = document.createElement('h2');
+  const createEquipment = document.createElement('h2');
+  const createTime = document.createElement('h2');
+  const createEditButton = document.createElement('button')
+  createName.innerHTML = activityKey.activityName;
+  createAge.innerHTML = activityKey.ageReq;
+  createHeight.innerHTML = activityKey.heightReq;
+  createEquipment.innerHTML = activityKey.equipment;
+  createTime.innerHTML = activityKey.time;
+  createEditButton.innerHTML = "edit";
+  childAppender.appendChild(createName)
+  childAppender.appendChild(createAge)
+  childAppender.appendChild(createHeight)
+  childAppender.appendChild(createEquipment)
+  childAppender.appendChild(createTime)
+  childAppender.appendChild(createEditButton);
+}
 
-  activitydata.forEach(activity => {
-    const createName = document.createElement('a');
-    createName.href = "www.google.com"
-    const createAge = document.createElement('h1');
-    const createHeight = document.createElement('h1');
-    const createEquipment = document.createElement('h1');
-    const createTime = document.createElement('h1');
-    createName.innerHTML = activity.activityName;
-    createAge.innerHTML = activity.ageReq;
-    createHeight.innerHTML = activity.heightReq;
-    createEquipment.innerHTML = activity.equipment;
-    createTime.innerHTML = activity.time;
-    childAppender.appendChild(createName)
-    childAppender.appendChild(createAge)
-    childAppender.appendChild(createHeight)
-    childAppender.appendChild(createEquipment)
-    childAppender.appendChild(createTime)
+}
+
+
+let activityMap = new Map();
+
+function createActivityMap(data){
+  data.forEach(Activity =>{
+activityMap.set(Activity.activityId, Activity)
   })
 
 }
-let childAppender = document.querySelector('.appending')
+
+
+
 
 callGetAllActivities();
+
+
 
 
 
@@ -69,4 +86,5 @@ function updateActivity(){
 
 }
 
-document.querySelector('.pb').addEventListener('click', updateActivity);
+document.querySelector('.pb').addEventListener('click', callGetAllActivities);
+
