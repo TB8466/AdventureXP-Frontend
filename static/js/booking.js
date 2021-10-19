@@ -1,8 +1,4 @@
-
-
 const out = function (str) {console.log(str)};
-
-out("hello");
 
 
 const saveBookingURL = "http://localhost:8080/booking/save";
@@ -19,18 +15,25 @@ let postRequestBooking = {
 
 let bookingJson = {
   "bookingId": "",
-  "bookingName": ""
+  "guestName": "",
+  "guestAmount" : "",
+  "bookedActivity" : "",
+  "date" : ""
   }
 
-//btn=button
+
+
 function createBooking(btn){
+  const guestName = document.querySelector(".guestName");
+  const guestAmount = document.querySelector(".guestAmount");
+  const bookedActivity = document.querySelector(".bookedActivity");
+  const dateTime = document.querySelector(".dateTime");
+  bookingJson.guestName = guestName.value;
+  bookingJson.guestAmount = guestAmount.value;
+  bookingJson.bookedActivity = bookedActivity.value;
+  bookingJson.date = dateTime.value;
 
-  let inpValue1 = document.querySelector(".bookingNameClass");
 
-  //Udfylder variabel
-  bookingJson.bookingName = inpValue1.value;
-
-  //JSON.stringify gør at vi lavet det om ti JSON
   postRequestBooking.body = JSON.stringify(bookingJson);
   fetch(saveBookingURL, postRequestBooking).catch((error) => console.log(error));
 
