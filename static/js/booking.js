@@ -37,3 +37,9 @@ function createBooking(btn){
 }
 
 document.querySelector(".CreateBookBtn").addEventListener("click", createBooking);
+
+
+
+
+
+
