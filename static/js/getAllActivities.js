@@ -1,19 +1,8 @@
-const out = (str) => console.log(str);
 
-const getActivitiesURL = "http://localhost:8080/activity/get";
-
-
-function getAllActivities(){
-  return fetch(getActivitiesURL).then(response => response.json());
-}
-
-function callGetAllActivities(btn){
-  const prom = getAllActivities();
-  prom.then(createActivityMap).then(printActivities);
-}
 
 function printActivities(){
   let childAppender = document.querySelector('.appending')
+
 for(let key of activityMap.keys()) {
   let activityKey = activityMap.get(key)
   const createName = document.createElement('h1');
@@ -22,37 +11,23 @@ for(let key of activityMap.keys()) {
   const createEquipment = document.createElement('h2');
   const createTime = document.createElement('h2');
   const createEditButton = document.createElement('button')
+  const createATag = document.createElement('a')
   createName.innerHTML = activityKey.activityName;
   createAge.innerHTML = activityKey.ageReq;
   createHeight.innerHTML = activityKey.heightReq;
   createEquipment.innerHTML = activityKey.equipment;
   createTime.innerHTML = activityKey.time;
   createEditButton.innerHTML = "edit";
+  createATag.href = "../activity/updateActivity.html"
   childAppender.appendChild(createName)
   childAppender.appendChild(createAge)
   childAppender.appendChild(createHeight)
   childAppender.appendChild(createEquipment)
   childAppender.appendChild(createTime)
-  childAppender.appendChild(createEditButton);
+  createATag.appendChild(createEditButton)
+  childAppender.appendChild(createATag);
 }
-
 }
-
-
-let activityMap = new Map();
-
-function createActivityMap(data){
-  data.forEach(Activity =>{
-activityMap.set(Activity.activityId, Activity)
-  })
-
-}
-
-
-
-
-callGetAllActivities();
-
 
 
 
@@ -86,5 +61,5 @@ function updateActivity(){
 
 }
 
-document.querySelector('.pb').addEventListener('click', callGetAllActivities);
+document.querySelector('.pb').addEventListener('click', printActivities);
 
