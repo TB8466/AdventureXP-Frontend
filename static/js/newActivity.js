@@ -1,13 +1,5 @@
 const out = function (str) {console.log(str)};
 
-
-
-console.log("hello")
-
-
-
-
-
 const saveActivityURL = "http://localhost:8080/activity/save";
 
 let postRequestActivity= {
@@ -27,7 +19,8 @@ let activityJson = {
   "time": ""
 }
 
-function createActivity(btn){
+
+function createActivity(){
 
   let inpValue1 = document.querySelector('.actinp1')
   let inpValue2 = document.querySelector('.actinp2')

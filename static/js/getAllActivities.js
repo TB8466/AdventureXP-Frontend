@@ -1,28 +1,35 @@
 
+// 5 function
 async function wait4Fetch(){
   await getAll();
   printActivities();
 }
 
+// 6 function
 function printActivities(){
   let childAppender = document.querySelector('.appending')
 
 for(let key of activityMap.keys()) {
   let activityKey = activityMap.get(key)
+
   const createName = document.createElement('h1');
   const createAge = document.createElement('h2');
   const createHeight = document.createElement('h2');
   const createEquipment = document.createElement('h2');
   const createTime = document.createElement('h2');
-  const createEditButton = document.createElement('button')
+  const createEditButton = document.createElement('input')
   const createATag = document.createElement('a')
+
   createName.innerHTML = activityKey.activityName;
   createAge.innerHTML = activityKey.ageReq;
   createHeight.innerHTML = activityKey.heightReq;
   createEquipment.innerHTML = activityKey.equipment;
   createTime.innerHTML = activityKey.time;
-  createEditButton.innerHTML = "edit";
+  createEditButton.type = "button";
+  createEditButton.setAttribute("value", "Edit");
+  createEditButton.onclick = function(){  makeLocalKey(key);}
   createATag.href = "../activity/updateActivity.html"
+
   childAppender.appendChild(createName)
   childAppender.appendChild(createAge)
   childAppender.appendChild(createHeight)
@@ -30,10 +37,18 @@ for(let key of activityMap.keys()) {
   childAppender.appendChild(createTime)
   createATag.appendChild(createEditButton)
   childAppender.appendChild(createATag);
-  localStorage.setItem("MyKey",key);
+
+
 }
+}
+function makeLocalKey(key){
+
+  localStorage.setItem("myKey", key);
+
 }
 
+
+wait4Fetch();
 
 
 
@@ -65,6 +80,6 @@ function updateActivity(){
 
 
 }
-wait4Fetch();
+
 document.querySelector('.pb').addEventListener('click', printActivities);
 
