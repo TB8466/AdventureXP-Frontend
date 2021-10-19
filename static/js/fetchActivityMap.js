@@ -3,13 +3,13 @@ const out = (str) => console.log(str);
 const getActivitiesURL = "http://localhost:8080/activity/get";
 
 
-function getAllActivities(){
+async function getAllActivities(){
   return fetch(getActivitiesURL).then(response => response.json());
 }
 
-function callGetAllActivities(btn){
+async function callGetAllActivities(btn){
   const prom = getAllActivities();
-  prom.then(createActivityMap);
+  await prom.then(createActivityMap);
 }
 
 
@@ -21,4 +21,8 @@ function createActivityMap(data){
   })
 
 }
-callGetAllActivities();
+
+async function getAll (){
+  await callGetAllActivities();
+}
+

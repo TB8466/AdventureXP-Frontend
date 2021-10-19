@@ -1,4 +1,8 @@
 
+async function wait4Fetch(){
+  await getAll();
+  printActivities();
+}
 
 function printActivities(){
   let childAppender = document.querySelector('.appending')
@@ -26,6 +30,7 @@ for(let key of activityMap.keys()) {
   childAppender.appendChild(createTime)
   createATag.appendChild(createEditButton)
   childAppender.appendChild(createATag);
+  localStorage.setItem("MyKey",key);
 }
 }
 
@@ -60,6 +65,6 @@ function updateActivity(){
 
 
 }
-
+wait4Fetch();
 document.querySelector('.pb').addEventListener('click', printActivities);
 
