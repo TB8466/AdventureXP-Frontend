@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head class="head">
+  <script src="../../static/js/head.js"></script>
 </head>
 <body class="body">
 <script src="../../static/js/header.js"></script>
 
+<h1 class="h1Activity">Create Booking</h1>
+
+<div class="inputWrapper">
         <input type="text" class="guestName" placeholder="Guest name">
         <input type="number" class="guestAmount" placeholder="Amount of people">
-        <input type="" class="bookedActivity" placeholder="Activity">
+        <input type="text" class="bookedActivity" placeholder="Activity">
         <input type="datetime-local" class="dateTime" placeholder="Date&Time">
+</div>
 
-        <button class="CreateBookBtn">Create booking</button>
+        <button class="pb">Create booking</button>
 
+<div class="inputWrapper">
         <input type="text" class="BoolingNameDelete" placeholder="Delete name">
+</div>
 
-        <button class="DeleteBookingBtn">Delete booking</button>
+        <button class="pb">Delete booking</button>
 
 <script src="../../static/js/fetchBookingMap.js"></script>
 <script src="../../static/js/booking.js"></script>

@@ -5,7 +5,7 @@ td {
 
   Background: #ff7679
 }
-.InstrucStyle{
+.InstructStyle{
   Background: #8cd2ff
 }
 
@@ -15,18 +15,148 @@ td {
 }
 
 body{
-    background-color: green;
+    background-color: darkgreen;
 }
 
 header{
   border-bottom: 5px solid black;
 }
 
+nav {
+  float: left;
+  margin: 0 5px;
+
+}
+
 .inputWrapper{
   display: flex;
   width: fit-content;
-  border: 5px solid black;
+  border: 100px solid black;
+  gap: 5px;
+  border-radius: 50px;
+  border-color:#73AD21;
+
 
   margin: auto;
   margin-top: 15px;
+
+
+
+
 }
+.pb {
+ /* margin: 0;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  border: 5px solid black */
+
+  /* border: green;
+  border-radius: 50px;
+  background: #73AD21;
+  height: 30px;
+  align-content: center;
+  margin: auto;
+  margin-top: 30px; */
+
+  text-align: center;
+  margin: auto;
+  display: flex;
+  margin-top: 30px;
+  border: black;
+  border-radius: 50px;
+  font-size: 20px;
+  font-family: Arial;
+  cursor: pointer;
+  background: white;
+}
+
+.h1Emp {
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  color: white;
+  font-family: Arial;
+}
+
+.h1Activity {
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  color: white;
+  font-family: Arial;
+}
+
+.CreateEmpBtn {
+  /*Har ikke taget udgangspunkt i vores pb, da jeg ikke mådte
+  lave classerne om ifht til JS.
+   */
+  /*border: black;
+  border-radius: 50px;
+  background: #73AD21;
+  height: 30px;
+  align-content: center;
+  margin-left: 50%;
+  margin-top: 30px; */
+
+  text-align: center;
+  margin: auto;
+  display: flex;
+  margin-top: 30px;
+  border: black;
+  border-radius: 50px;
+  font-size: 20px;
+  font-family: Arial;
+  cursor: pointer;
+  background: white;
+}
+.CreateEmpBtn:hover {
+  background-color: #73AD21;
+}
+
+.pb:hover {
+  background-color: #73AD21;
+}
+
+input[type="text"] {
+  font-size: 20px;
+  font-family: Arial;
+  border-radius: 50px;
+  border-color: #73AD21;
+}
+
+input[type=number] {
+  font-size: 20px;
+  font-family: Arial;
+  border-radius: 50px;
+  border-color: green;
+}
+
+input[type=datetime-local]{
+  font-size: 20px;
+  font-family: Arial;
+  border-radius: 50px;
+  border-color: green
+
+}
+
+/* show-activities html */
+.body{
+  color: darkgreen;
+}
+h1{
+  color: white;
+  font-family: Arial;
+}
+h2 {
+  color: white;
+}
+p {
+  color: white;
+}
+
+
+
+
+
+
