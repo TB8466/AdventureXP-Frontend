@@ -1,51 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head class="head"><script src="../../static/js/head.js"></script></head>
-<input type="date" class="dateInp">
+
 <style>
 table, th, td {
 border:1px solid black;
 }
+table{
+  float: left;
+}
+input{
+  float: left;
+  margin-right: 100%;
+}
+.bookingTable td{
+  transition: 1s;
+}
+.bookingTable td:hover{
+  background-color: blue;
+}
 </style>
 <body>
+<input type="date" class="dateInp">
+<div class="calenderHeader"></div>
+<table style="width:fit-content" class="timeTable">
+  <tr>
+    <th>Time:</th>
+  </tr>
 
-<table style="width:100%">
-  <tr class="ActivStyle">
-    <th>Gokart</th>
-    <th>Paintball</th>
-    <th>Sumo Wrestling</th>
-    <th>Human TableFootball</th>
-    <th>Laser Tag</th>
-    <th>Team Building</th>
-    <th>Football Golf</th>
-  </tr>
-  <tr class="InstrucStyle">
-    <td>Alfred F</td>
-    <td>Maria A</td>
-    <td>Karsten</td>
-    <td>Brian</td>
-    <td>Ida</td>
-    <td>Julie</td>
-    <td>Henning</td>
-  </tr>
-  <tr class="BookStyle">
-    <!-- Gokart -->
-    <td>13-18 Alpha Solutions</td>
-    <!-- Paintball -->
-    <td>14-17 Generated Business Company</td>
-    <!-- Sumo Wrestling -->
-    <td>company name</td>
-    <!-- Human TableFootball -->
-    <td>company name</td>
-    <!-- Laser Tag -->
-    <td>company name</td>
-    <!-- Team Building -->
-    <td>company name</td>
-    <!-- Football Golf -->
-    <td>company name</td>
-  </tr>
 </table>
+<div  class="bookingTable"></div>
 
+<script src="../../static/js/fetchActivityMap.js"></script>
+<script src="../../static/js/fetchBookingMap.js"></script>
+<script src="../../static/js/calender.js"></script>
 </body>
 </html>
 

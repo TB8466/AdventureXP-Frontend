@@ -38,11 +38,10 @@ function updateActivityInputMaker(){
     createTimeInput.value = activityKey.time;
     createUpdateButton.type = "button";
     createUpdateButton.setAttribute("value", "Update")
-    createUpdateButton.onclick = async function (){
+    createUpdateButton.onclick = function (){
       out(activityKey.activityId)
       out(i)
-      await updateActivity(activityKey.activityId,i);
-      await updateActivity(activityKey.activityId,i);
+      updateActivity(activityKey.activityId,i);
     }
     childAppendtrix.appendChild(createNameInput)
     childAppendtrix.appendChild(createAgeInput)

@@ -26,4 +26,3 @@ function createActivityMap(data){
 async function getAll (){
   await callGetAllActivities();
 }
-

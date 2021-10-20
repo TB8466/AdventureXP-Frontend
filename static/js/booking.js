@@ -1,6 +1,3 @@
-const out = function (str) {console.log(str)};
-
-
 const saveBookingURL = "http://localhost:8080/booking/save";
 
 
@@ -27,11 +24,11 @@ function createBooking(btn){
   const guestName = document.querySelector(".guestName");
   const guestAmount = document.querySelector(".guestAmount");
   const bookedActivity = document.querySelector(".bookedActivity");
-  const dateTime = document.querySelector(".dateTime");
+  const date = document.querySelector(".dateTime");
   bookingJson.guestName = guestName.value;
   bookingJson.guestAmount = guestAmount.value;
   bookingJson.bookedActivity = bookedActivity.value;
-  bookingJson.date = dateTime.value;
+  bookingJson.date = date.value;
 
 
   postRequestBooking.body = JSON.stringify(bookingJson);

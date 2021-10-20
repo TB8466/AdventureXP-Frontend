@@ -1,17 +1,13 @@
-const out = (str) => console.log(str);
-
-
-
 const getBookingURL = "http://localhost:8080/booking/get";
 
-function getAllBookings(){
+async function getAllBookings(){
   return fetch(getBookingURL).then(response => response.json());
 }
 
 
-function callGetAllBookings(){
+async function callGetAllBookings(){
 const prom = getAllBookings();
-prom.then(createBookingMap);
+await prom.then(createBookingMap);
 }
 
 let bookingMap = new Map();
@@ -22,4 +18,3 @@ function createBookingMap(data){
   })
 }
 
-callGetAllBookings()
