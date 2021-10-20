@@ -11,10 +11,9 @@ function updateActivityInputMaker(){
 
   let childAppendtrix = document.querySelector('.appendingUpdate')
 
-
+  let i = 1;
   for(let key of activityMap.keys()) {
     let activityKey = activityMap.get(key)
-
 
     const createNameInput = document.createElement('input');
     const createAgeInput = document.createElement('input');
@@ -24,11 +23,12 @@ function updateActivityInputMaker(){
     const createUpdateButton = document.createElement('input');
     const createBr = document.createElement('br')
 
-    createNameInput.setAttribute('class', "updateInput1")
-    createAgeInput.setAttribute('class', "updateInput2")
-    createHeightInput.setAttribute('class', "updateInput3")
-    createEquipmentInput.setAttribute('class', "updateInput4")
-    createTimeInput.setAttribute('class', "updateInput5")
+    createNameInput.setAttribute('class', "updateNameInput"+i)
+    createAgeInput.setAttribute('class', "updateAgeInput"+i)
+    createHeightInput.setAttribute('class', "updateHeightInput"+i)
+    createEquipmentInput.setAttribute('class', "updateEquipInput"+i)
+    createTimeInput.setAttribute('class', "updateTimeInput"+i)
+    i++;
 
 
     createNameInput.value = activityKey.activityName;
@@ -38,8 +38,11 @@ function updateActivityInputMaker(){
     createTimeInput.value = activityKey.time;
     createUpdateButton.type = "button";
     createUpdateButton.setAttribute("value", "Update")
-    createUpdateButton.onclick = function (){
-      updateActivity()
+    createUpdateButton.onclick = async function (){
+      out(activityKey.activityId)
+      out(i)
+      await updateActivity(activityKey.activityId,i);
+      await updateActivity(activityKey.activityId,i);
     }
     childAppendtrix.appendChild(createNameInput)
     childAppendtrix.appendChild(createAgeInput)
@@ -60,7 +63,6 @@ let variabel = localStorage.getItem("MyKey")
 
 
 
-
 let activityJson = {
   "activityId": "",
   "activityName": "",
@@ -72,9 +74,13 @@ let activityJson = {
 
 
 
-async function updateActivity() {
 
-  const updateActivityURL = "http://localhost:8080/activity/update/" + variabel;
+function updateActivity(key) {
+
+  const updateActivityURL = "http://localhost:8080/activity/update/" + key;
+
+
+
 
   let putRequestActivity= {
     method: "PUT",
@@ -84,25 +90,28 @@ async function updateActivity() {
     body: JSON.stringify(activityJson)
   }
 
-  let inpValue1 = document.querySelector('.updateInput1')
-  let inpValue2 = document.querySelector('.updateInput2')
-  let inpValue3 = document.querySelector('.updateInput3')
-  let inpValue4 = document.querySelector('.updateInput4')
-  let inpValue5 = document.querySelector('.updateInput5')
 
 
+  let inpValue1 = document.querySelector('.updateNameInput'+key)
+  let inpValue2 = document.querySelector('.updateAgeInput'+key)
+  let inpValue3 = document.querySelector('.updateHeightInput'+key)
+  let inpValue4 = document.querySelector('.updateEquipInput'+key)
+  let inpValue5 = document.querySelector('.updateTimeInput'+key)
+
+
+  activityJson.activityId = key;
   activityJson.activityName = inpValue1.value;
   activityJson.ageReq = inpValue2.value;
   activityJson.heightReq = inpValue3.value;
   activityJson.equipment = inpValue4.value;
   activityJson.time = inpValue5.value;
 
-  const johnny = await fetch(updateActivityURL, putRequestActivity).catch((error) => console.log(error));
-return johnny.json()
+
+ fetch(updateActivityURL, putRequestActivity)
+
 out(activityJson)
 
 }
 
-//let hesteknap = document.querySelector('.knapDemOp')
-//hesteknap.addEventListener('click', updateActivityInputMaker)
+
 
