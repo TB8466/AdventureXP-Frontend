@@ -1,13 +1,14 @@
+let childAppender = document.querySelector('.appending')
 
 // 5 function
 async function wait4Fetch(){
   await getAll();
   printActivities();
 }
+wait4Fetch();
 
 // 6 function
 function printActivities(){
-  let childAppender = document.querySelector('.appending')
 
 for(let key of activityMap.keys()) {
   let activityKey = activityMap.get(key)
@@ -18,93 +19,123 @@ for(let key of activityMap.keys()) {
   const equipment = document.createElement("h1");
   const time = document.createElement("h1");
 
+  name.innerHTML = "Activity name:";
+  age.innerHTML = "Age requirement:";
+  height.innerHTML = "Height requirement:";
+  equipment.innerHTML = "Equipments: ";
+  time.innerHTML = "Time";
 
-  const createName = document.createElement('p');
-  const createAge = document.createElement('p');
-  const createHeight = document.createElement('p');
-  const createEquipment = document.createElement('p');
-  const createTime = document.createElement('p');
+  const activityName = document.createElement('p');
+  const activityAge = document.createElement('p');
+  const activityHeight = document.createElement('p');
+  const activityEquipment = document.createElement('p');
+  const activityTime = document.createElement('p');
+  const deleteBtn = document.createElement('input')
   const createEditButton = document.createElement('input')
-  const createATag = document.createElement('a')
 
 
+  activityName.innerHTML = activityKey.activityName;
+  activityAge.innerHTML = activityKey.ageReq;
+  activityHeight.innerHTML = activityKey.heightReq;
+  activityEquipment.innerHTML = activityKey.equipment;
+  activityTime.innerHTML = activityKey.time;
 
-  name.innerText = "Activity name:";
-  age.innerText = "Age requirement:";
-  height.innerText = "Height requirement:";
-  equipment.innerText = "Equipments: ";
-  time.innerText = "Time";
+  deleteBtn.type = "button";
+  deleteBtn.setAttribute('value', "Delete")
+  deleteBtn.onclick = function (){
+    deleteActivity(activityKey.activityId)
+  }
 
-
-  createName.innerHTML = activityKey.activityName;
-  createAge.innerHTML = activityKey.ageReq;
-  createHeight.innerHTML = activityKey.heightReq;
-  createEquipment.innerHTML = activityKey.equipment;
-  createTime.innerHTML = activityKey.time;
   createEditButton.type = "button";
   createEditButton.setAttribute("value", "Edit");
-  createEditButton.onclick = function(){  makeLocalKey(key);}
-  createATag.href = "../activity/updateActivity.html"
+  createEditButton.onclick = function(){
+    const editName = document.createElement('input')
+    editName.setAttribute('value', activityKey.activityName);
+    const editAge = document.createElement('input')
+    editAge.setAttribute('value',activityKey.ageReq)
+    const editHeight = document.createElement('input')
+    editHeight.setAttribute('value', activityKey.heightReq)
+    const editEquipment = document.createElement('input')
+    editEquipment.setAttribute('value',activityKey.equipment)
+    const editTime = document.createElement('input')
+    editTime.setAttribute('value', activityKey.time)
 
+    const submitBtn = document.createElement('input')
+    submitBtn.type = 'button'
+    submitBtn.setAttribute('value', "Confirm Update")
+
+    activityName.appendChild(editName)
+    activityAge.appendChild(editAge)
+    activityHeight.appendChild(editHeight)
+    activityEquipment.appendChild(editEquipment)
+    activityTime.appendChild(editTime)
+    activityTime.appendChild(submitBtn)
+    submitBtn.onclick = function (){
+      updateActivity(activityKey.activityId, editName.value,editAge.value,editHeight.value,editEquipment.value,editTime.value)
+    }
+  }
   childAppender.appendChild(name)
-  childAppender.appendChild(createName)
+  childAppender.appendChild(activityName)
   childAppender.appendChild(age)
-  childAppender.appendChild(createAge)
+  childAppender.appendChild(activityAge)
   childAppender.appendChild(height)
-  childAppender.appendChild(createHeight)
+  childAppender.appendChild(activityHeight)
   childAppender.appendChild(equipment)
-  childAppender.appendChild(createEquipment)
+  childAppender.appendChild(activityEquipment)
   childAppender.appendChild(time)
-  childAppender.appendChild(createTime)
-  createATag.appendChild(createEditButton)
-  childAppender.appendChild(createATag);
-
-
-}
-}
-function makeLocalKey(key){
-
-  localStorage.setItem("myKey", key);
-
+  childAppender.appendChild(activityTime)
+  childAppender.appendChild(deleteBtn)
+  childAppender.appendChild(createEditButton)
+  }
 }
 
-
-wait4Fetch();
-
-
+async function deleteActivity(id){
+  const URL = "http://localhost:8080/activity/delete/"+id;
 
 
-
-function updateActivity(){
-
-  const URL = "http://localhost:8080/activity/update/" + 1;
-
-  let activityJson = {
-    "activityId": "",
-    "activityName": "Hestecurling",
-    "ageReq": "22",
-    "heightReq": "22",
-    "equipment": "nonemoooss",
-    "time": "25"
+  const deleteMapObj = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: ""
   }
 
-  let postRequestActivity= {
+  await fetch(URL, deleteMapObj);
+}
+
+async function updateActivity(id, newName, newAge, newHeight, newEquipment, newTime ){
+
+  const URL = "http://localhost:8080/activity/update/"+id;
+
+
+
+
+  const updatedActivityJson = {
+    "activityId": "",
+    "activityName": newName,
+    "ageReq": newAge,
+    "heightReq" : newHeight,
+    "equipment" : newEquipment,
+    "time" : newTime
+  }
+
+
+  const updateMapObj = {
     method: "PUT",
     headers: {
-      "content-type": "application/json"
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify(activityJson)
+    body: JSON.stringify(updatedActivityJson)
   }
-
-
-
-  const response = fetch(URL, postRequestActivity)
-  out(response)
-
-
-
-
+  await fetch(URL, updateMapObj)
 }
 
-document.querySelector('.pb').addEventListener('click', printActivities);
+
+
+
+
+
+
+
 

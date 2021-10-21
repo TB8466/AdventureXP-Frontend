@@ -17,6 +17,7 @@ function printBookings(){
     const amount = document.createElement("h1");
     const activity = document.createElement("h1");
     const arrival = document.createElement("h1");
+
     id.innerHTML = "ID: ";
     name.innerHTML = "Guest Name: ";
     amount.innerHTML = "Amount of Guest: ";
@@ -36,15 +37,17 @@ function printBookings(){
     guestAmount.innerHTML = bookingKey.guestAmount;
     bookedActivity.innerHTML = bookingKey.bookedActivity;
     date.innerHTML = bookingKey.date;
+
     deleteBtn.type = "button";
     deleteBtn.setAttribute("value", "Delete Booking");
     deleteBtn.onclick = function() {
       deleteBooking(bookingKey.bookingId);
     }
-    editBtn.type = "button";
-    editBtn.setAttribute("value", "Edit Booking");
-    editBtn.onclick = function() {
-      const editGuestName = document.createElement("input");
+
+      editBtn.type = "button";
+      editBtn.setAttribute("value", "Edit Booking");
+      editBtn.onclick = function() {
+        const editGuestName = document.createElement("input");
       editGuestName.setAttribute("value",bookingKey.guestName);
       const editGuestAmount = document.createElement("input");
       editGuestAmount.setAttribute("value",bookingKey.guestAmount);
@@ -53,9 +56,11 @@ function printBookings(){
       const editDate = document.createElement("input");
       editDate.type = "datetime-local";
       editDate.setAttribute("value",bookingKey.date);
+
       const submitBtn = document.createElement("input");
       submitBtn.type = "button";
       submitBtn.setAttribute("value", "Submit Updated Booking");
+
       name.appendChild(editGuestName);
       amount.appendChild(editGuestAmount);
       activity.appendChild(editBookedActivity);
@@ -64,7 +69,6 @@ function printBookings(){
       submitBtn.onclick = function (){
         editBooking(bookingKey.bookingId,editGuestName.value,editGuestAmount.value,editBookedActivity.value,new Date(editDate.value));
       }
-
     }
     bookings.appendChild(id);
     bookings.appendChild(bookingId);
@@ -78,13 +82,6 @@ function printBookings(){
     bookings.appendChild(date);
     bookings.appendChild(deleteBtn);
     bookings.appendChild(editBtn);
-
-
-
-
-
-
-
   }
 }
 
@@ -135,6 +132,8 @@ async function deleteBooking(id){
 
   await fetch(URL, fetchOptions);
 }
+
+
 async function editBooking(id,guestName,guestAmount,bookedActivity,date){
   const URL = "http://localhost:8080/booking/update/"+id;
 
