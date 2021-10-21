@@ -42,6 +42,7 @@ function printBookings(){
     deleteBtn.setAttribute("value", "Delete Booking");
     deleteBtn.onclick = function() {
       deleteBooking(bookingKey.bookingId);
+      location.href = "../booking/show-bookings.html";
     }
 
       editBtn.type = "button";
@@ -68,6 +69,7 @@ function printBookings(){
       arrival.appendChild(submitBtn);
       submitBtn.onclick = function (){
         editBooking(bookingKey.bookingId,editGuestName.value,editGuestAmount.value,editBookedActivity.value,new Date(editDate.value));
+        location.href = "../booking/show-bookings.html";
       }
     }
     bookings.appendChild(id);

@@ -60,9 +60,6 @@ async function deleteBooking(Booking) {
   return response;
 }
 
-const deleteBtn = document.querySelector('.DeleteBookingBtn')
-deleteBtn.addEventListener('click', deleteBooking)
-
 
 
 

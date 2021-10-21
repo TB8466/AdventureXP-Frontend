@@ -22,7 +22,9 @@ function createActivityTables(){
     const th = document.createElement("th");
 
     th.innerHTML = activityKey.activityName;
-    table.setAttribute("class",activityKey.activityName);
+    let aName = activityKey.activityName;
+    aName = aName.replace(/\s+/g, '');
+    table.setAttribute("class",aName);
     tr.appendChild(th);
     table.appendChild(tr);
     bookingTable.appendChild(table);
@@ -44,7 +46,7 @@ function createActivityTables(){
 
         //Check if reservation matches any activity
         if(bookingKey.bookedActivity === activityKey.activityName){
-          const aTable = document.querySelector("."+activityKey.activityName);
+          const aTable = document.querySelector("."+aName);
 
           //Check if reservation matches any hour from the timestamp
         if (bkDate.getHours() === j ) {
