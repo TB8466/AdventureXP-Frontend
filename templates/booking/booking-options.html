@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head class="head">
   <script src="../../static/js/head.js"></script>
-
 </head>
 <header>
   <nav>
@@ -20,23 +19,32 @@
 <br>
 <br>
 <br>
+
+<h1 class="h1styles">Booking</h1>
+
 <div class="pageToPage">
-  <form method="GET" action="../activity/new-activity.html">
-    <input type="submit" value="Create new activity">
-  </form>
-
-  <form method="GET" action="../activity/show-activities.html">
-    <input type="submit" value="Show activities">
-  </form>
-
   <form method="GET" action="../booking/new-booking.html">
-    <input type="submit" value="Create new booking">
+    <input type="submit" value="New booking">
   </form>
-
-  <form method="GET" action="../employee/new-employee.html">
-    <input type="submit" value="Create new employee">
+  <form method="GET" action="../booking/show-bookings.html">
+    <input type="submit" value="Show bookings">
   </form>
 </div>
+
+<!-- Calender input -->
+<input type="date" class="dateInp">
+<div class="calenderHeader"></div>
+<table  class="timeTable">
+  <tr>
+    <th>Time:</th>
+  </tr>
+
+</table>
+<div  class="bookingTable"></div>
+
+<script src="../../static/js/fetchActivityMap.js"></script>
+<script src="../../static/js/fetchBookingMap.js"></script>
+<script src="../../static/js/calender.js"></script>
 
 
 </body>

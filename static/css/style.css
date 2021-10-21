@@ -18,9 +18,6 @@ body{
     background-color: darkgreen;
 }
 
-header{
-  border-bottom: 5px solid black;
-}
 
 nav {
   float: left;
@@ -72,23 +69,11 @@ nav {
   background: white;
 }
 
-.h1Emp {
-  text-align: center;
-  margin: auto;
-  margin-top: 10px;
-  color: white;
-  font-family: Arial;
-}
 
-.h1Activity {
-  text-align: center;
-  margin: auto;
-  margin-top: 10px;
-  color: white;
-  font-family: Arial;
-}
 
-.CreateEmpBtn {
+
+
+/*.CreateEmpBtn {
   /*Har ikke taget udgangspunkt i vores pb, da jeg ikke mådte
   lave classerne om ifht til JS.
    */
@@ -100,6 +85,15 @@ nav {
   margin-left: 50%;
   margin-top: 30px; */
 
+/*.CreateEmpBtn:hover {
+  background-color: #73AD21;
+}*/
+
+/*.pb:hover {
+  background-color: #73AD21;
+} */
+button
+ {
   text-align: center;
   margin: auto;
   display: flex;
@@ -111,11 +105,10 @@ nav {
   cursor: pointer;
   background: white;
 }
-.CreateEmpBtn:hover {
-  background-color: #73AD21;
-}
 
-.pb:hover {
+
+
+button:hover{
   background-color: #73AD21;
 }
 
@@ -138,7 +131,13 @@ input[type=datetime-local]{
   font-family: Arial;
   border-radius: 50px;
   border-color: green
+}
 
+input[type=submit] {
+  font-size: 20px;
+  font-family: Arial;
+  border-radius: 50px;
+  border-color: green
 }
 
 /* show-activities html */
@@ -152,9 +151,94 @@ h1{
 h2 {
   color: white;
 }
+.h1styles {
+  text-align: center;
+  margin: auto;
+  margin-top: 0px;
+  color: white;
+  font-family: Arial;
+}
+
 p {
   color: white;
 }
+
+
+/* Homepage */
+.pageToPage {
+  display: flex;
+
+}
+/* NavBar */
+
+nav {
+  color: white;
+  width: 100%;
+  margin: 0%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+
+  text-decoration: none;
+
+}
+
+li a:hover:not(.active){
+  background-color: #111;
+}
+.active {
+  background-color: #04AA6D;
+}
+
+/* Calendar styling */
+table, th, td, tr {
+  border:1px solid black;
+}
+table{
+  float: left;
+  width: fit-content;
+}
+.dateInp{
+  position: absolute;
+  padding: 15px;
+  top: 50%;
+  left: 25%;
+  right: 25%;
+}
+.bookingTable td{
+  transition: 1s;
+}
+.bookingTable td:hover{
+  background-color: blue;
+}
+td {
+  background-color: white;
+  color: #111111;
+}
+
+th{
+  background-color: white;
+}
+
+
+
+
 
 
 
