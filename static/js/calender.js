@@ -80,5 +80,5 @@ function updateH1() {
 }
 
 wait4Fetch();
-dateInp.addEventListener("change",createActivityTables)
+dateInp.addEventListener("change",createActivityTables  )
 dateInp.addEventListener("change",updateH1)
