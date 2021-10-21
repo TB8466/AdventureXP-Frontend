@@ -44,6 +44,8 @@ for(let key of activityMap.keys()) {
   deleteBtn.setAttribute('value', "Delete")
   deleteBtn.onclick = function (){
     deleteActivity(activityKey.activityId)
+    location.href = "../activity/show-activities.html"
+
   }
 
   createEditButton.type = "button";
@@ -72,6 +74,7 @@ for(let key of activityMap.keys()) {
     activityTime.appendChild(submitBtn)
     submitBtn.onclick = function (){
       updateActivity(activityKey.activityId, editName.value,editAge.value,editHeight.value,editEquipment.value,editTime.value)
+      location.href = "../activity/show-activities.html"
     }
   }
   childAppender.appendChild(name)
