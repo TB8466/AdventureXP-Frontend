@@ -1,17 +1,10 @@
 td {
   text-align: center;
 }
-.BookStyle{
 
-  Background: #ff7679
-}
-.InstructStyle{
-  Background: #8cd2ff
-}
+.InstructTable{
+  background-color: #73AD21;
 
-.ActivStyle{
-
-  Background: #fffea3
 }
 
 body{
