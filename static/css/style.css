@@ -8,7 +8,7 @@ td {
 }
 
 body{
-    background-color: darkgreen;
+    background-color: whitesmoke;
 }
 
 
@@ -21,15 +21,19 @@ nav {
 .inputWrapper{
   display: flex;
   width: fit-content;
-  border: 100px solid black;
+  border: 2px solid black;
   gap: 5px;
-  border-radius: 50px;
-  border-color:#73AD21;
-  background-color:#73AD21;
+  text-align: center;
+  border-radius: 25px;
+  padding: 30px;
+  border-color: black;
+  background-color:dodgerblue;
+
 
 
   margin: auto;
   margin-top: 15px;
+
 
 
 
@@ -54,12 +58,13 @@ nav {
   margin: auto;
   display: flex;
   margin-top: 30px;
-  border: black;
+  border: 2px solid black;
   border-radius: 50px;
   font-size: 20px;
   font-family: Arial;
   cursor: pointer;
-  background: white;
+  background: dodgerblue;
+  color: whitesmoke;
 }
 
 
@@ -90,12 +95,13 @@ button {
   margin: auto;
   display: flex;
   margin-top: 30px;
-  border: black;
+  border: 2px solid black;
   border-radius: 50px;
   font-size: 20px;
   font-family: Arial;
   cursor: pointer;
-  background: white;
+  background-color: dodgerblue;
+  color: whitesmoke;
 }
 
 button:hover{
@@ -107,22 +113,24 @@ button:hover{
 input[type="text"] {
   font-size: 20px;
   font-family: Arial;
+  border: 2px solid black;
   border-radius: 50px;
-  border-color: #73AD21;
 }
 
 input[type=number] {
   font-size: 20px;
   font-family: Arial;
+  border: 2px solid black;
   border-radius: 50px;
-  border-color: green;
+
 }
 
 input[type=datetime-local]{
   font-size: 20px;
   font-family: Arial;
+  border: 2px solid black;
   border-radius: 50px;
-  border-color: green
+  border-color: black;
 }
 
 input[type=submit] {
@@ -130,14 +138,29 @@ input[type=submit] {
   margin: auto;
   display: flex;
   margin-top: 30px;
-  border: black;
+  border: 2px solid black;
   border-radius: 50px;
   font-size: 20px;
   font-family: Arial;
   cursor: pointer;
-  background: white;
+  background: dodgerblue;
+  color: whitesmoke;
+}
 
-
+input[type=button]{
+  text-align: center;
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 50px;
+  font-size: 20px;
+  font-family: Arial;
+  cursor: pointer;
+  background: whitesmoke;
+  color: black;
 }
 
 input[type=submit]:hover {
@@ -153,7 +176,7 @@ input[type=submit]:hover {
 
 /* show-activities html */
 .body{
-  color: darkgreen;
+  color: whitesmoke;
 }
 h1{
   color: white;
@@ -166,7 +189,7 @@ h2 {
   text-align: center;
   margin: auto;
   margin-top: 0px;
-  color: white;
+  color: black;
   font-family: Arial;
 }
 
@@ -178,7 +201,6 @@ p {
 /* Homepage */
 .pageToPage {
   display: flex;
-
 }
 /* NavBar */
 
@@ -247,6 +269,14 @@ td {
 th{
   background-color: white;
 }
+
+.bookingID {
+  font-size: 20px;
+  font-family: Arial;
+  border: 2px solid black;
+  border-radius: 50px;
+}
+
 
 
 
