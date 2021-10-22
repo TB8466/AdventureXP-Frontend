@@ -13,8 +13,7 @@ body{
 
 
 nav {
-  float: left;
-  margin: 0 5px;
+
 
 }
 
@@ -224,6 +223,8 @@ nav {
   width: 100%;
   margin: 0%;
   font-family: Arial;
+  float: left;
+  margin: 0 5px;
 }
 
 ul {
@@ -232,10 +233,14 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  border: 2px solid #333;
 }
 
 li {
   float: left;
+  text-align: center;
+
+
 }
 
 li a {
@@ -249,10 +254,13 @@ li a {
 }
 
 li a:hover:not(.active){
-  background-color: #111;
+  background-color: whitesmoke;
+  color: black;
 }
 .active {
-  background-color: #04AA6D;
+  background-color: dodgerblue;
+  display: flex;
+  justify-content: center;
 }
 
 /* Calendar styling */
@@ -283,6 +291,10 @@ td {
 th{
   background-color: white;
 }
+input[type=button]:hover{
+  color: whitesmoke;
+  background-color: #73AD21;
+}
 
 .bookingID {
   font-size: 10px;
@@ -301,6 +313,13 @@ th{
   height: 30px;
   justify-content: center;
 
+}
+
+select {
+  font-size: 20px;
+  font-family: Arial;
+  border: 2px solid black;
+  border-radius: 50px;
 }
 
 
@@ -352,6 +371,10 @@ th{
 
 }
 
+.logo{
+  float: right;
+  height: 50px;
+}
 
 
 
