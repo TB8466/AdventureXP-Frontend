@@ -373,8 +373,14 @@ select {
 
 .logo{
   float: right;
-  height: 50px;
+  width: auto;
 
+
+
+}
+.logoPic {
+  height: 40px;
+  width: 100px;
 }
 
 
