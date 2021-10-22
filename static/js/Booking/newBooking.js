@@ -1,5 +1,14 @@
 const saveBookingURL = "http://localhost:8080/booking/save";
+async function wait4Fetch(){
+  await getAll();
+  fillDropDown();
+}
+wait4Fetch();
 
+const guestName = document.querySelector(".guestName");
+const guestAmount = document.querySelector(".guestAmount");
+const bookedActivity = document.querySelector(".bookedActivity");
+const date = document.querySelector(".dateTime");
 
 let postRequestBooking = {
   method: "POST",
@@ -18,13 +27,17 @@ let bookingJson = {
   "date" : ""
   }
 
-
+function fillDropDown(){
+  for(let key of activityMap.keys()) {
+    let activityKey = activityMap.get(key)
+    const option = document.createElement("option");
+    option.innerHTML = activityKey.activityName;
+    bookedActivity.appendChild(option);
+  }
+}
 
 function createBooking(btn){
-  const guestName = document.querySelector(".guestName");
-  const guestAmount = document.querySelector(".guestAmount");
-  const bookedActivity = document.querySelector(".bookedActivity");
-  const date = document.querySelector(".dateTime");
+
   bookingJson.guestName = guestName.value;
   bookingJson.guestAmount = guestAmount.value;
   bookingJson.bookedActivity = bookedActivity.value;

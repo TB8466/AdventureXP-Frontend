@@ -53,13 +53,14 @@ function createActivityTables(){
 
           //Check if HTML date input matches any reservation date
           if(bkDate.getDate() === selectedDate.getDate()){
+            console.log(activityKey.time)
+            //If reservation is found, color td tag yellow and insert customers name
+            td2.style.backgroundColor = "Yellow";
+            td2.innerHTML = bookingKey.guestName;
 
-          //If reservation is found, color td tag yellow and insert customers name
-          td2.style.backgroundColor = "Yellow";
-          td2.innerHTML = bookingKey.guestName;
+            tr2.appendChild(td2);
+            aTable.appendChild(tr2);
 
-          tr2.appendChild(td2);
-          aTable.appendChild(tr2);
         }
         }
         }
@@ -67,6 +68,7 @@ function createActivityTables(){
     }
   }
 }
+
 
 async function wait4Fetch(){
   await getAll();
