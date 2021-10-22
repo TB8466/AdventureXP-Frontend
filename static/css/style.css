@@ -267,15 +267,19 @@ li a:hover:not(.active){
 table, th, td, tr {
   border:1px solid black;
 }
+
+tr{
+  color: black;
+}
+.calenderHeader h1{
+  color: black;
+}
 table{
   float: left;
   width: fit-content;
 }
 .dateInp{
-  position: absolute;
-  padding: 15px;
-  left: 25%;
-  right: 25%;
+  position: relative;
 }
 .bookingTable td{
   transition: 1s;
