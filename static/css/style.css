@@ -136,6 +136,7 @@ input[type=number] {
   border: 2px solid black;
   border-radius: 50px;
 
+
 }
 
 input[type=datetime-local]{
@@ -285,18 +286,33 @@ th{
 }
 
 .bookingID {
-  font-size: 20px;
+  font-size: 10px;
   font-family: Arial;
   border: 2px solid black;
   border-radius: 50px;
+  height: 30px;
+  width: 100%;
+  }
+
+.searchBooking{
+
+  font-family: Arial;
+  border: 2px solid black;
+  border-radius: 50px;
+  height: 30px;
+  justify-content: center;
+
 }
 
 
+.shopzName{
 
+  width: 100%;
+}
 
+.tshirtSize{
 
-
-
+}
 
 
 
