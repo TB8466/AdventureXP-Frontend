@@ -1,4 +1,6 @@
-let childAppender = document.querySelector('.appending')
+//let childAppender = document.querySelector('.appending')
+let inputWrapper = document.querySelector(".inputWrapper");
+
 
 
 async function wait4Fetch(){
@@ -12,6 +14,11 @@ function printActivities(){
 
 for(let key of activityMap.keys()) {
   let activityKey = activityMap.get(key)
+
+  let childAppender = document.createElement("div");
+  childAppender.setAttribute("class","appending");
+  inputWrapper.appendChild(childAppender);
+
 
   const name = document.createElement("h1");
   const age = document.createElement("h1");

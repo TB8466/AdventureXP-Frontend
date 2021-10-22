@@ -18,8 +18,9 @@ nav {
 
 }
 
-.inputWrapper{
+.inputWrapper {
   display: flex;
+  flex-wrap: wrap;
   width: fit-content;
   border: 2px solid black;
   gap: 5px;
@@ -38,6 +39,18 @@ nav {
 
 
 
+}
+.appending {
+  flex: 1 0 25%;
+
+  border: 2px solid black;
+  gap: 5px;
+  text-align: center;
+  border-radius: 25px;
+  padding: 30px;
+  border-color: black;
+  background-color:dodgerblue;
+  margin-top: 15px;
 }
 .pb {
  /* margin: 0;
@@ -163,7 +176,7 @@ input[type=button]{
   color: black;
 }
 
-input[type=submit]:hover {
+  [type=submit]:hover {
   background-color: #73AD21;
 }
 .pageToPage {
@@ -195,6 +208,7 @@ h2 {
 
 p {
   color: white;
+  font-size: 30px;
 }
 
 
