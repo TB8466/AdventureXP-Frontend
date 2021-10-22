@@ -335,7 +335,7 @@ select {
   border-radius: 25px;
   padding: 3px;
   border-color: black;
-  margin-left: 77px;
+  justify-content: center;
 }
 
 .tshirtSize{
@@ -346,7 +346,7 @@ select {
   border-radius: 25px;
   padding: 3px;
   border-color: black;
-  margin-left: 70px;
+  justify-content: center;
 
 }
 
@@ -357,7 +357,7 @@ select {
   border-radius: 25px;
   padding: 3px;
   border-color: black;
-  margin-left: 60px;
+  justify-content: center;
 }
 
 .pose_type{
@@ -367,7 +367,7 @@ select {
   border-radius: 25px;
   padding: 3px;
   border-color: black;
-  margin-left: 85px;
+  justify-content: center;
 
 }
 
@@ -386,6 +386,10 @@ select {
 
 
 
+img{
+  float: left;
+  width: 33%;
+}
 
 
 .shopstyle{
