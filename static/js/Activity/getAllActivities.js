@@ -1,13 +1,13 @@
 let childAppender = document.querySelector('.appending')
 
-// 5 function
+
 async function wait4Fetch(){
   await getAll();
   printActivities();
 }
 wait4Fetch();
 
-// 6 function
+
 function printActivities(){
 
 for(let key of activityMap.keys()) {
@@ -45,7 +45,6 @@ for(let key of activityMap.keys()) {
   deleteBtn.onclick = function (){
     deleteActivity(activityKey.activityId)
     location.href = "../activity/show-activities.html"
-
   }
 
   createEditButton.type = "button";
@@ -112,8 +111,6 @@ async function updateActivity(id, newName, newAge, newHeight, newEquipment, newT
   const URL = "http://localhost:8080/activity/update/"+id;
 
 
-
-
   const updatedActivityJson = {
     "activityId": "",
     "activityName": newName,
@@ -122,7 +119,6 @@ async function updateActivity(id, newName, newAge, newHeight, newEquipment, newT
     "equipment" : newEquipment,
     "time" : newTime
   }
-
 
   const updateMapObj = {
     method: "PUT",

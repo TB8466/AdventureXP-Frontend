@@ -30,10 +30,8 @@ function createBooking(btn){
   bookingJson.bookedActivity = bookedActivity.value;
   bookingJson.date = date.value;
 
-
   postRequestBooking.body = JSON.stringify(bookingJson);
   fetch(saveBookingURL, postRequestBooking).catch((error) => console.log(error));
-
 }
 
 const create =document.querySelector(".CreateBookBtn")
