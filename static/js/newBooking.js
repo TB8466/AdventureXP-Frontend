@@ -36,29 +36,11 @@ function createBooking(btn){
 
 }
 
-document.querySelector(".CreateBookBtn").addEventListener("click", createBooking);
+const create =document.querySelector(".CreateBookBtn")
+create.addEventListener("click", createBooking);
 
 
 
-async function deleteBooking(Booking) {
-  const deleteBokkingURL = "http://localhost:8080/booking/delete" + Booking.bookingId;
-
-  const deleteRequestBooking = {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: ""
-  }
-
-  const response = await fetch(deleteBokkingURL, deleteRequestBooking);
-
-  if (!response.ok) {
-    out("det gik ikke godt");
-  }
-
-  return response;
-}
 
 
 
