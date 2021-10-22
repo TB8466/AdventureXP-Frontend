@@ -110,23 +110,86 @@ function printSpecificBooking(){
 
       let bookingKey = bookingMap.get(id)
 
+      const bookingIdText = document.createElement("p");
       const bookingId = document.createElement("p");
+      const guestNameText = document.createElement("p");
       const guestName = document.createElement("p");
+      const guestAmountText = document.createElement("p");
       const guestAmount = document.createElement("p");
+      const bookedActivityText = document.createElement("p");
       const bookedActivity = document.createElement("p");
+      const dateText = document.createElement("p");
       const date = document.createElement("p");
+      const deleteBtn = document.createElement("input");
+      const editBtn = document.createElement("input");
 
+      deleteBtn.type = "button";
+      deleteBtn.setAttribute("value", "Delete Booking");
+      deleteBtn.onclick = function() {
+        deleteBooking(bookingKey.bookingId);
+        location.href = "../booking/show-bookings.html";
+      }
+
+      editBtn.type = "button";
+      editBtn.setAttribute("value", "Edit Booking");
+      editBtn.onclick = function() {
+        const editGuestName = document.createElement("input");
+        editGuestName.setAttribute("value",bookingKey.guestName);
+        const editGuestAmount = document.createElement("input");
+        editGuestAmount.type = "Number";
+        editGuestAmount.setAttribute("value",bookingKey.guestAmount);
+        const editBookedActivity = document.createElement("select");
+        editBookedActivity.setAttribute("value",bookingKey.bookedActivity);
+        for(let key of activityMap.keys()) {
+          let activityKey = activityMap.get(key)
+          const option = document.createElement("option");
+          option.innerHTML = activityKey.activityName;
+          editBookedActivity.appendChild(option);
+        }
+
+        const editDate = document.createElement("input");
+        editDate.type = "datetime-local";
+        editDate.setAttribute("value",bookingKey.date);
+
+        const submitBtn = document.createElement("input");
+        submitBtn.type = "button";
+        submitBtn.setAttribute("value", "Submit Updated Booking");
+
+        guestNameText.appendChild(editGuestName);
+        guestAmountText.appendChild(editGuestAmount);
+        bookedActivityText.appendChild(editBookedActivity);
+        dateText.appendChild(editDate);
+        dateText.appendChild(submitBtn);
+        submitBtn.onclick = function (){
+          editBooking(bookingKey.bookingId,editGuestName.value,editGuestAmount.value,editBookedActivity.value,new Date(editDate.value));
+          location.href = "../booking/show-bookings.html";
+        }
+      }
+
+
+      bookingIdText.innerHTML = "ID: "
+      guestNameText.innerHTML = "Guest Name: ";
+      guestAmountText.innerHTML = "Amount of Guest: ";
+      bookedActivityText.innerHTML = "Booked Activity: ";
+      dateText.innerHTML = "Time of Arrival";
       bookingId.innerHTML = bookingKey.bookingId;
       guestName.innerHTML = bookingKey.guestName;
       guestAmount.innerHTML = bookingKey.guestAmount;
       bookedActivity.innerHTML = bookingKey.bookedActivity;
       date.innerHTML = bookingKey.date;
 
+      specificBooking.appendChild(bookingIdText);
       specificBooking.appendChild(bookingId);
+      specificBooking.appendChild(guestNameText);
       specificBooking.appendChild(guestName);
+      specificBooking.appendChild(guestAmountText);
       specificBooking.appendChild(guestAmount);
+      specificBooking.appendChild(bookedActivityText);
       specificBooking.appendChild(bookedActivity);
+      specificBooking.appendChild(dateText);
       specificBooking.appendChild(date);
+      specificBooking.appendChild(deleteBtn);
+      specificBooking.appendChild(editBtn);
     }
   else{
         const notFound = document.createElement("h1");
