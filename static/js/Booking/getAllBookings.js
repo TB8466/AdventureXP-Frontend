@@ -5,6 +5,7 @@ const bookings = document.querySelector(".bookings");
 
 async function wait4Fetch(){
   await callGetAllBookings();
+  await getAll();
   printBookings();
 }
 
@@ -51,9 +52,17 @@ function printBookings(){
         const editGuestName = document.createElement("input");
       editGuestName.setAttribute("value",bookingKey.guestName);
       const editGuestAmount = document.createElement("input");
+      editGuestAmount.type = "Number";
       editGuestAmount.setAttribute("value",bookingKey.guestAmount);
-      const editBookedActivity = document.createElement("input");
+      const editBookedActivity = document.createElement("select");
       editBookedActivity.setAttribute("value",bookingKey.bookedActivity);
+          for(let key of activityMap.keys()) {
+            let activityKey = activityMap.get(key)
+            const option = document.createElement("option");
+            option.innerHTML = activityKey.activityName;
+            editBookedActivity.appendChild(option);
+          }
+
       const editDate = document.createElement("input");
       editDate.type = "datetime-local";
       editDate.setAttribute("value",bookingKey.date);
