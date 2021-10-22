@@ -1,7 +1,8 @@
 const specificBooking = document.querySelector(".specificBooking");
 const bookingID = document.querySelector(".bookingID");
 const searchBooking = document.querySelector(".searchBooking");
-const bookings = document.querySelector(".bookings");
+const inputWrapper = document.querySelector(".inputWrapper");
+
 
 async function wait4Fetch(){
   await callGetAllBookings();
@@ -12,6 +13,10 @@ async function wait4Fetch(){
 function printBookings(){
   for(let key of bookingMap.keys()) {
     let bookingKey = bookingMap.get(key)
+
+    const bookings = document.createElement("div");
+    bookings.setAttribute("class","appending");
+    inputWrapper.appendChild(bookings);
 
     const id = document.createElement("h1");
     const name = document.createElement("h1");
