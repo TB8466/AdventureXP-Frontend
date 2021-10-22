@@ -310,10 +310,58 @@ th{
   width: 100%;
 }
 
+.tshirtFarve{
+  border: 2px solid black;
+  gap: 5px;
+  text-align: center;
+  border-radius: 25px;
+  padding: 3px;
+  border-color: black;
+  margin-left: 77px;
+}
+
 .tshirtSize{
+
+  border: 2px solid black;
+  gap: 5px;
+  text-align: center;
+  border-radius: 25px;
+  padding: 3px;
+  border-color: black;
+  margin-left: 70px;
 
 }
 
+.sodaSmag{
+  border: 2px solid black;
+  gap: 5px;
+  text-align: center;
+  border-radius: 25px;
+  padding: 3px;
+  border-color: black;
+  margin-left: 60px;
+}
+
+.pose_type{
+  border: 2px solid black;
+  gap: 5px;
+  text-align: center;
+  border-radius: 25px;
+  padding: 3px;
+  border-color: black;
+  margin-left: 85px;
+
+}
+
+
+
+
+
+.shopstyle{
+  padding-top: 80px;
+  margin: auto;
+  width: 15%;
+}
 
 
 
